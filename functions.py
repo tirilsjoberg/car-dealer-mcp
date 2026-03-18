@@ -1,6 +1,10 @@
+from pathlib import Path
 import pandas as pd
 
-df = pd.read_csv("Automobile.csv")
+BASE_DIR = Path(__file__).resolve().parent
+DATA_PATH = BASE_DIR / "Automobile.csv"
+
+df = pd.read_csv(DATA_PATH)
 
 
 def get_highest_horsepower_cars(n=5):
