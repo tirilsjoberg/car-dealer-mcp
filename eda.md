@@ -8,7 +8,7 @@ The cars in the dataset are from the period 1970–1982, making these insights p
 - There is a clear trade-off between fuel efficiency and horsepower. Cars with high horsepower tend to have significantly lower mpg, meaning they consume more fuel.
 - American cars dominate the high-horsepower segment in this dataset. The cars with the highest horsepower are almost exclusively from the USA. These can be attractive cars for speed enthusiasts and customers who want powerful engines. 
 - Japanese and European cars are generally more fuel efficient. There are no American cars among the top 10 most fuel-efficient vehicles. Cars from Japan and Europe tend to have higher mpg values, making them more attractive for buyers concerned with environmental impact, fuel costs, and everyday usability.
-- Heavier cars tend to have higher horsepower, indicating a relationship between vehicle size and engine power.
+- Heavier cars tend to have higher horsepower, but this often results in lower fuel efficiency. This highlights that increased engine power is frequently used to move the vehicle’s own weight rather than improving overall performance efficiency. This makes the BMW 2002 stand out as a strong example of a balanced vehicle, offering both solid performance and reasonable fuel efficiency.
 
 **Business relevance**
 From a sales perspective, the dataset allows the dealer to:

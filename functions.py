@@ -17,6 +17,14 @@ def get_most_fuel_efficient_cars(n=5):
     descending order because higher mpg means lower fuel consumption'''
     return df.sort_values("mpg", ascending=False).head(n) 
 
+def get_best_power_to_weight_cars(n=5):
+    """Return the n cars with the best power-to-weight ratio.
+
+    A higher power-to-weight ratio can indicate a more responsive and sporty driving experience.
+    """
+    result = df.copy()
+    result["power_to_weight"] = result["horsepower"] / result["weight"]
+    return result.sort_values("power_to_weight", ascending=False).head(n)
 
 
 def get_origin_statistics(): 

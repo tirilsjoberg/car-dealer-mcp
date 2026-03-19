@@ -3,6 +3,7 @@ from functions import (
     get_highest_horsepower_cars,
     get_most_fuel_efficient_cars,
     get_origin_statistics,
+    get_best_power_to_weight_cars,
 )
 
 mcp = FastMCP("car-dealer")
@@ -31,6 +32,16 @@ def most_fuel_efficient_cars(n: int = 5) -> list[dict]:
     )
 
     return result[["name", "mpg", "horsepower", "origin", "sales_highlight"]].to_dict(orient="records")
+
+@mcp.tool()
+def best_power_to_weight_cars(n: int = 5) -> list[dict]:
+    """Return the n cars with the best power-to-weight ratio, highlighting lightweight performance."""
+    result = get_best_power_to_weight_cars(n).copy()
+    result["sales_highlight"] = result.apply(
+        lambda row: f"{row['name']} combines {row['horsepower']} horsepower with a weight of {row['weight']}, giving it a strong power-to-weight ratio for customers interested in a more responsive driving experience.",
+        axis=1,
+    )
+    return result[["name", "horsepower", "weight", "mpg", "origin", "power_to_weight", "sales_highlight"]].to_dict(orient="records")
 
 @mcp.tool()
 def origin_statistics() -> list[dict]:
