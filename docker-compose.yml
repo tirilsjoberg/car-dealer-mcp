@@ -1,0 +1,6 @@
+services:
+  car-dealer-mcp:
+    build: .
+    container_name: car-dealer-mcp
+    stdin_open: true
+    tty: true
